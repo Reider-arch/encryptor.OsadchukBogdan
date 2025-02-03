@@ -1,4 +1,5 @@
 package org.javarush;
+
 import org.javarush.files.FileService;
 import java.util.Scanner;
 public class CLI {
