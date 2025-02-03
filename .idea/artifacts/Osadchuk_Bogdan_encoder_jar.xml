@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="Osadchuk.Bogdan.encoder:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/Osadchuk_Bogdan_encoder_jar</output-path>
+    <root id="archive" name="Osadchuk.Bogdan.encoder.jar">
+      <element id="module-output" name="Osadchuk.Bogdan.encoder" />
+    </root>
+  </artifact>
+</component>
