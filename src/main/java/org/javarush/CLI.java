@@ -7,7 +7,7 @@ public class CLI {
     private FileService fileService = new FileService();
     private Scanner scanner = new Scanner(System.in);
     public void start() {
-        System.out.println("Ласкаво просимо до Caesar Cipher CLI!");
+        System.out.println("Ласкаво просимо до CLI!");
         while (true) {
             System.out.println("\nВиберіть команду:");
             System.out.println("1. ENCRYPT");
