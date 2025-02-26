@@ -45,6 +45,8 @@ public class CaesarCipher {
     }
 
     private static final int ALPHABET_SIZE = 26;
+
+
     private String encrypt(String text, int key) {
         StringBuilder encrypted = new StringBuilder();
         for (char c : text.toCharArray()) {
