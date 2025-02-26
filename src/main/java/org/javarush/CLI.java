@@ -1,12 +1,20 @@
 package org.javarush;
+
 import org.javarush.files.FileService;
 import java.util.Scanner;
+
+
 public class CLI {
-    private CaesarCipher cipher = new CaesarCipher();
-    private FileService fileService = new FileService();
-    private Scanner scanner = new Scanner(System.in);
+
+    private final CaesarCipher cipher = new CaesarCipher();
+
+    private final FileService fileService = new FileService();
+
+    private final Scanner scanner = new Scanner(System.in);
+
+
     public void start() {
-        System.out.println("Ласкаво просимо до Caesar Cipher CLI!");
+        System.out.println("Ласкаво просимо до CLI!");
         while (true) {
             System.out.println("\nВиберіть команду:");
             System.out.println("1. ENCRYPT");
@@ -35,6 +43,7 @@ public class CLI {
             }
         }
     }
+
     private void encrypt() {
         System.out.print("Введіть шлях до файлу для шифрування: ");
         String filePath = scanner.nextLine();
@@ -42,6 +51,8 @@ public class CLI {
         int key = Integer.parseInt(scanner.nextLine());
         cipher.encryptFile(filePath, key, fileService);
     }
+
+
     private void decrypt() {
         System.out.print("Введіть шлях до файлу для дешифрування: ");
         String filePath = scanner.nextLine();
@@ -49,6 +60,8 @@ public class CLI {
         int key = Integer.parseInt(scanner.nextLine());
         cipher.decryptFile(filePath, key, fileService);
     }
+
+
     private void bruteForce() {
         System.out.print("Введіть шлях до файлу для брутфорсу: ");
         String filePath = scanner.nextLine();

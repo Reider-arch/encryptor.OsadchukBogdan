@@ -1,8 +1,13 @@
 package org.javarush;
+
 import org.javarush.files.FileService;
+
 import java.io.IOException;
+
 public class CaesarCipher {
-    public void encryptFile(String filePath, int key, FileService fileService) {
+
+
+     void encryptFile(String filePath, int key, FileService fileService) {
         try {
             String content = fileService.readFile(filePath);
             String encryptedContent = encrypt(content, key);
@@ -12,7 +17,9 @@ public class CaesarCipher {
             e.printStackTrace();
         }
     }
-    public void decryptFile(String filePath, int key, FileService fileService) {
+
+
+     void decryptFile(String filePath, int key, FileService fileService) {
         try {
             String content = fileService.readFile(filePath);
             String decryptedContent = decrypt(content, key);
@@ -22,7 +29,9 @@ public class CaesarCipher {
             e.printStackTrace();
         }
     }
-    public void bruteForce(String filePath, FileService fileService) {
+
+
+    void bruteForce(String filePath, FileService fileService) {
         try {
             String content = fileService.readFile(filePath);
             for (int key = 1; key <= 25; key++) {
@@ -34,24 +43,29 @@ public class CaesarCipher {
             e.printStackTrace();
         }
     }
+
+    private static final int ALPHABET_SIZE = 26;
+
+
     private String encrypt(String text, int key) {
         StringBuilder encrypted = new StringBuilder();
         for (char c : text.toCharArray()) {
             if (Character.isLetter(c)) {
                 char base = Character.isLowerCase(c) ? 'a' : 'A';
-                encrypted.append((char) ((c - base + key) % 26 + base));
+                encrypted.append((char) ((c - base + key) % ALPHABET_SIZE + base));
             } else {
                 encrypted.append(c);
             }
         }
         return encrypted.toString();
     }
+
     private String decrypt(String text, int key) {
         StringBuilder decrypted = new StringBuilder();
         for (char c : text.toCharArray()) {
             if (Character.isLetter(c)) {
                 char base = Character.isLowerCase(c) ? 'a' : 'A';
-                decrypted.append((char) ((c - base - key + 26) % 26 + base));
+                decrypted.append((char) ((c - base - key + 26) % ALPHABET_SIZE + base));
             } else {
                 decrypted.append(c);
             }
